@@ -21,7 +21,7 @@ public class Pessoa  implements Serializable{
 	
 	private String nome;
 	
-	private String sobreNome;
+	private String sobrenome;
 	
 	private int idade;
 	
@@ -51,12 +51,12 @@ public class Pessoa  implements Serializable{
 		this.nome = nome;
 	}
 
-	public String getSobreNome() {
-		return sobreNome;
+	public String getSobrenome() {
+		return sobrenome;
 	}
 
-	public void setSobreNome(String sobreNome) {
-		this.sobreNome = sobreNome;
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 
 	public static long getSerialversionuid() {
