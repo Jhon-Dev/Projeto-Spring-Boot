@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Cadastro</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,7 +29,21 @@
 <input class="waves-effect waves-light btn-small" type="submit" value="Salvar">
 </form>
 
+
+<br/>
+<br/>
 <a href="/listapessoas"> Lista de Cadastros</a>
+
+<br/>
+<br/>
+<form action="pesquisarpessoa" method="post">
+<label>Pesquisa:</label>
+<input name="nomepesquisa">
+<input class="waves-effect waves-light btn-small" type="submit" value="Buscar">
+</form>
+
+<br/>
+<br/>
 
 <table>
  <tr th:each = "pessoa : ${pessoas}">
