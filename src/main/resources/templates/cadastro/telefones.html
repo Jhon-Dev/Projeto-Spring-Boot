@@ -53,6 +53,8 @@ form input[type=submit] {
    <tr th:each="fone : ${telefones}">
      <td th:text="${fone.numero}"/>
      <td th:text="${fone.tipo}"/>
+       <td><a th:href="@{/removertelefone/{idtelefone}(idtelefone=${fone.id})}">Excluir</a></td>
+     
    </tr>
  </table>
  
