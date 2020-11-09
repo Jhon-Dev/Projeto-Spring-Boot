@@ -29,7 +29,25 @@ form input[type=submit] {
 <p>Sobrenome: <span th:text="${p.sobrenome}"></span></p>
 <p>Idade: <span th:text="${p.idade}"></span></p>
 
-</div>
+			<h5>Telefones</h5>
+			<div class="row">
+				<form th:action="@{/addfonePessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" method="post" class="col s12">
+					<div class="row">
+						<div class="input-fiel col s6">
+							<label class="active" for="numero">Número:</label> <input
+								id="numero" name="numero" class="validate">
+						</div>
+
+						<div class="input-fiel col s6">
+							<label class="active" for="tipo">Tipo:</label> <input
+								id="tipo" name="tipo" class="validate">
+						</div>
+						<input type="submit" value="Adicionar" class="waves-effect waves-light btn-small">
+						
+					</div>
+				</form>
+			</div>
+		</div>
 </div>
 <a class="waves-effect waves-light btn-small" href="/cadastropessoa">Cad. Pessoa</a>
 
