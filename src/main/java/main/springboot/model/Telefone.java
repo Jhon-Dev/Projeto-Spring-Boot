@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import org.hibernate.annotations.ForeignKey;
 
 
+@SuppressWarnings("deprecation")
 @Entity
 public class Telefone {
 
@@ -23,8 +24,8 @@ public class Telefone {
 	/*
 	 * Amarra o telefone ao  Objeto Pessoa
 	 */
-	@ForeignKey(name = "pessoa_id")
-	@ManyToOne()  	
+	@ForeignKey(name="pessoa_id")
+	@ManyToOne
 	private Pessoa pessoa;
 	
 	
@@ -44,11 +45,11 @@ public class Telefone {
 		this.numero = numero;
 	}
 
-	public String gettipo() {
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void settipo(String tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 
