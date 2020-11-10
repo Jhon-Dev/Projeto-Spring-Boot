@@ -23,7 +23,17 @@ form input[type=submit] {
 <h5>Cadastro de Pessoas</h5>
 
 <div th:each="p: ${pessoaobj}">
+
+
 <div class="row">
+
+<br/>
+   <div th:each = "m : ${msg}">
+   <span th:text = "${m}"></span>
+   </div>
+<br/>
+
+
 <p>ID: <span th:text="${p.id}"></span></p>
 <p>Nome: <span th:text="${p.nome}"></span></p>
 <p>Sobrenome: <span th:text="${p.sobrenome}"></span></p>
@@ -48,6 +58,9 @@ form input[type=submit] {
     </div>
    </form>
  </div>
+ </div>
+ </div>
+ 
  
  <table class="striped">
    <tr th:each="fone : ${telefones}">
