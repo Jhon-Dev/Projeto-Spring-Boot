@@ -1,5 +1,10 @@
 package main.springboot.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +27,26 @@ public class TelefoneController {
 	private TelefoneRepository telefoneRepository;
 
 	@PostMapping("**/addfonePessoa/{pessoaid}")
-	public ModelAndView addFonePessoa(Telefone telefone, @PathVariable("pessoaid") Long pessoaid) {
+	public ModelAndView addFonePessoa(@Valid Telefone telefone, @PathVariable("pessoaid") Long pessoaid) {
+		
 		
 		Pessoa pessoa = pessoaRepository.findById(pessoaid).get();
+		
+		if (telefone != null && telefone.getNumero() != null 
+			&& telefone.getNumero().isEmpty() || telefone.getNumero() == null) {
+			
+			ModelAndView modelAndView = new ModelAndView("cadastro/telefones");
+			modelAndView.addObject("pessoaobj", pessoa);
+			modelAndView.addObject("telefones", telefoneRepository.getTelefones(pessoaid));
+			
+			List<String> msg = new ArrayList<String>();
+			msg.add("Numero deve ser informado");
+			modelAndView.addObject("msg", msg);
+
+			return modelAndView;
+		}
+		
+		
 		telefone.setPessoa(pessoa);
 		
 		telefoneRepository.save(telefone);

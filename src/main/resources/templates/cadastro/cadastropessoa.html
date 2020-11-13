@@ -107,8 +107,9 @@ form input[type=submit] {
  <td><a th:href="@{/telefones/{idpessoa}(idpessoa=${pessoa.id})}"><span th:text = "${pessoa.nome}"></span></a></td>
  <td th:text = "${pessoa.sobrenome}"></td>
   <td th:text = "${pessoa.idade}"></td>
- <td><a th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a></td>
-  <td><a th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Excluir</a></td>
+  
+ <td><a class="material-icons" th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">edit</a></td>
+  <td><a class="material-icons" th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">delete</a></td>
  
  </tr>
 </table>
